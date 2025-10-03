@@ -1,5 +1,4 @@
-
-
+// interfaces/index.ts
 export interface Address {
   state: string;
   city: string;
@@ -12,6 +11,20 @@ export interface Offers {
   occupants: string;
 }
 
+export interface Host {
+  name: string;
+  avatar?: string;
+  bio?: string;
+}
+
+export interface Review {
+  name: string;
+  avatar: string;
+  rating: number;  
+  comment: string;
+  date?: string;
+}
+
 export interface PropertyProps {
   name: string;
   address: Address;
@@ -20,7 +33,11 @@ export interface PropertyProps {
   price: number;
   offers: Offers;
   image: string;
-  discount: string; // "" or "20"
+  discount: string; 
+  description?: string;
+  images?: string[];
+  host?: Host;
+  reviews?: Review[];
 }
 
 export type PillProps = {
@@ -29,4 +46,3 @@ export type PillProps = {
   onClick?: () => void;
   className?: string;
 };
-
